@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "66831258177",
+    "firebase_url": "https://panino-ff054.firebaseio.com",
+    "project_id": "panino-ff054",
+    "storage_bucket": "panino-ff054.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66831258177:android:9d21f46ab9bf4d7325acc0",
+        "android_client_info": {
+          "package_name": "kr.co.sandylab.panino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "66831258177-lmb0q9i233fcsgqdlnm7gik4k0vh41ne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.sandylab.panino",
+            "certificate_hash": "bbe8c00da82d3e98da4264ad7111279a93a0cf9d"
+          }
+        },
+        {
+          "client_id": "66831258177-3u40lj46k4j8ricpg5vqn7varnh86or4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvZKL5dmmxiyRkXL0FNVaB37u7HTGCRGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "66831258177-3u40lj46k4j8ricpg5vqn7varnh86or4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "66831258177-jm90vri8uiv1vpttg1l2kks2qf2jvbjg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kr.co.sandylab.panino"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
