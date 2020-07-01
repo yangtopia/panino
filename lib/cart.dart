@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'bloc/cart_provider.dart';
 
 import 'item.dart';
-import 'main.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -11,6 +11,7 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
+    var cartBloc = CartProvider.of(context);
     return Scaffold(
         appBar: AppBar(
           title: Text('Cart'),
@@ -19,7 +20,7 @@ class _CartState extends State<Cart> {
           stream: cartBloc.cartList$,
           builder: (context, snapshot) {
             var sum = (() {
-              if (snapshot.data.length > 0) {
+              if (snapshot.hasData && snapshot.data.length > 0) {
                 return snapshot.data
                     .map((e) => e.price)
                     .reduce((value, element) => value + element);
