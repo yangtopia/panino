@@ -31,8 +31,6 @@ class Counter extends StatefulWidget {
 class _CounterState extends State<Counter> {
   final counterSubject = BehaviorSubject<int>();
 
-  int _counter = 0;
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -41,13 +39,15 @@ class _CounterState extends State<Counter> {
         children: [
           RaisedButton(
             onPressed: () {
-              counterSubject.add(++_counter);
+              counterSubject.add(
+                  counterSubject.value == null ? 0 : ++counterSubject.value);
             },
             child: Text('add'),
           ),
           StreamBuilder(
             stream: counterSubject.stream,
             initialData: 0,
+            // ignore: missing_return
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Text(
