@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'pages/index.dart';
 
 import 'samples/index.dart';
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyMethodChannel(),
+      home: MyTabController(),
     );
   }
 }
+
