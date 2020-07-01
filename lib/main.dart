@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rxdart/rxdart.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,53 +14,50 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'PANINO'),
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text('Counter'),
+          ),
+          body: Counter()),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
+class Counter extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _CounterState createState() => _CounterState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _CounterState extends State<Counter> {
+  final counterSubject = BehaviorSubject<int>();
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RaisedButton(
+            onPressed: () {
+              counterSubject.add(++_counter);
+            },
+            child: Text('add'),
+          ),
+          StreamBuilder(
+            stream: counterSubject.stream,
+            initialData: 0,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(
+                  '${snapshot.data}',
+                  style: TextStyle(fontSize: 30),
+                );
+              }
+            },
+          )
+        ],
       ),
     );
   }
