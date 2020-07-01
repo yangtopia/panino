@@ -1,27 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bloc/cart_bloc.dart';
 import 'catalog.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
+
+final cartBloc = CartBloc();
 
 class MyApp extends StatelessWidget {
-  final _cartBloc = CartBloc();
-
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-        create: (context) => _cartBloc,
-        child: MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-          ),
-          home: LoginScreen(),
-        ));
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: LoginScreen(),
+    );
   }
 }
 

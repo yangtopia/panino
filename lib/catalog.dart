@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/cart_bloc.dart';
 import 'cart.dart';
 import 'item.dart';
+import 'main.dart';
 
 class CatalogScreen extends StatefulWidget {
   @override
@@ -11,13 +11,8 @@ class CatalogScreen extends StatefulWidget {
 }
 
 class _CatalogScreenState extends State<CatalogScreen> {
-  final List<Item> _itemList = itemList;
-
   @override
   Widget build(BuildContext context) {
-    final _cartBloc = BlocProvider.of<CartBloc>(context);
-    // print(_cartBloc.state);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Catalog'),
@@ -33,18 +28,19 @@ class _CatalogScreenState extends State<CatalogScreen> {
               })
         ],
       ),
-      body: BlocBuilder<CartBloc, List<Item>>(
-        builder: (context, state) {
+      body: StreamBuilder(
+        stream: cartBloc.cartList$,
+        builder: (context, snapshot) {
           return ListView(
-              children: _itemList
-                  .map((item) => _buildItem(item, state, _cartBloc))
+              children: cartBloc.itemList
+                  .map((item) => _buildItem(item, snapshot.data))
                   .toList());
         },
       ),
     );
   }
 
-  Widget _buildItem(Item item, List<Item> state, CartBloc cartBloc) {
+  Widget _buildItem(Item item, List<Item> state) {
     final isChecked = state.contains(item);
 
     return Padding(
@@ -64,9 +60,9 @@ class _CatalogScreenState extends State<CatalogScreen> {
             onPressed: () {
               setState(() {
                 if (isChecked) {
-                  cartBloc.add(CartEvent(CartEventType.remove, item));
+                  cartBloc.dispatch(CartEvent(CartEventType.remove, item));
                 } else {
-                  cartBloc.add(CartEvent(CartEventType.add, item));
+                  cartBloc.dispatch(CartEvent(CartEventType.add, item));
                 }
               });
             }),
