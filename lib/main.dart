@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rxdart/rxdart.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'bloc/counter_bloc.dart';
+
+void main() => runApp(MyApp());
+
+final counterBloc = CounterBloc();
 
 class MyApp extends StatelessWidget {
   @override
@@ -29,8 +30,6 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  final counterSubject = BehaviorSubject<int>();
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -39,15 +38,12 @@ class _CounterState extends State<Counter> {
         children: [
           RaisedButton(
             onPressed: () {
-              counterSubject.add(
-                  counterSubject.value == null ? 0 : ++counterSubject.value);
+              counterBloc.addCounter();
             },
-            child: Text('add'),
+            child: Text('ADD'),
           ),
           StreamBuilder(
-            stream: counterSubject.stream,
-            initialData: 0,
-            // ignore: missing_return
+            stream: counterBloc.count$,
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return Text(
@@ -55,6 +51,9 @@ class _CounterState extends State<Counter> {
                   style: TextStyle(fontSize: 30),
                 );
               }
+              return Center(
+                child: CircularProgressIndicator(),
+              );
             },
           )
         ],
