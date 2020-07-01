@@ -34,6 +34,8 @@ dependencies:
   equatable: ^1.2.0
   meta: ^1.1.8
   rxdart: ^0.24.1
+  bloc: ^4.0.0
+  flutter_bloc: ^4.0.1
 
 dev_dependencies:
   effective_dart: ^1.2.0
