@@ -51,10 +51,11 @@ class MyApp extends StatelessWidget {
                       icon: Icon(Icons.account_circle), title: Text('MY')),
                 ],
                 type: BottomNavigationBarType.fixed,
-                fixedColor: Colors.blue,
+                fixedColor: Colors.deepOrange,
                 currentIndex: snapshot.data.index,
                 unselectedItemColor: Colors.grey,
-                showUnselectedLabels: true,
+                showSelectedLabels: false,
+                showUnselectedLabels: false,
                 onTap: _onTab,
               ),
             );

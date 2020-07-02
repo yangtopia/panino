@@ -7,6 +7,10 @@ class RecipePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('레시피'),
         elevation: 0,
+        centerTitle: false,
+        actions: [
+          IconButton(icon: Icon(Icons.notifications_none), onPressed: null)
+        ],
       ),
     );
   }
