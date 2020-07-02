@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
-import '../../pages/index.dart';
+import '../../../pages/index.dart';
 
 enum PageIndex {
   home,
   video,
-  recipe,
+  favorite,
   order,
   mypage
 }
@@ -14,7 +14,7 @@ enum PageIndex {
 final Map<PageIndex, Widget> pages = {
   PageIndex.home: HomePage(),
   PageIndex.video: VideoPage(),
-  PageIndex.recipe: RecipePage(),
+  PageIndex.favorite: RecipePage(),
   PageIndex.order: OrderPage(),
   PageIndex.mypage: MyPage(),
 };

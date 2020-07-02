@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class FavoritePage extends StatelessWidget {
+class RecipePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('좋아요'),
+        title: Text('레시피'),
+        elevation: 0,
       ),
     );
   }

@@ -5,7 +5,8 @@ class VideoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('오늘 뭐먹지'),
+        title: Text('동영상'),
+        elevation: 0,
       ),
     );
   }

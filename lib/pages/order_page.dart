@@ -6,6 +6,7 @@ class OrderPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('주문내역'),
+        elevation: 0,
       ),
     );
   }

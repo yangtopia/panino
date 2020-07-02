@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        // primarySwatch: Colors.white,
+        primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: StreamBuilder<PageIndex>(
@@ -41,13 +42,13 @@ class MyApp extends StatelessWidget {
                   BottomNavigationBarItem(
                       icon: Icon(Icons.home), title: Text('홈')),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.movie), title: Text('오늘 뭐먹지')),
+                      icon: Icon(Icons.movie), title: Text('동영상')),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.favorite), title: Text('좋아요')),
+                      icon: Icon(Icons.cake), title: Text('레시피')),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.list), title: Text('주문내역')),
+                      icon: Icon(Icons.airport_shuttle), title: Text('주문내역')),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.info), title: Text('MY')),
+                      icon: Icon(Icons.account_circle), title: Text('MY')),
                 ],
                 type: BottomNavigationBarType.fixed,
                 fixedColor: Colors.blue,
