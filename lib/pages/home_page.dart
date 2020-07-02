@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../state/provider/provider.dart';
+import '../state/provider/index.dart';
 
 class HomePage extends StatelessWidget {
   @override

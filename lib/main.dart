@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'state/bloc/bloc.dart';
-import 'state/provider/provider.dart';
+import 'state/bloc/index.dart';
+import 'state/provider/index.dart';
 
 void main() => runApp(MultiProvider(
         providers: [

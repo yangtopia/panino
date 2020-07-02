@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
-import '../../pages/pages.dart';
+import '../../pages/index.dart';
 
 enum PageIndex {
   home,
