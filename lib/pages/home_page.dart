@@ -7,12 +7,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _currentPageIndex = 0;
-  List<Widget> pages = [HomePage()];
+  final List<Widget> _pages = [HomePage(), null, null, null, null];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: null,
+      body: _pages[_currentPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('홈')),
@@ -23,15 +23,18 @@ class _MainPageState extends State<MainPage> {
           BottomNavigationBarItem(icon: Icon(Icons.info), title: Text('MY')),
         ],
         fixedColor: Colors.blue,
-        onTap: (index) {
-          setState(() {
-            _currentPageIndex = index;
-          });
-        },
+        currentIndex: _currentPageIndex,
+        onTap: _onTab,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
       ),
     );
+  }
+
+  void _onTab(int selectedPageIndex) {
+    setState(() {
+      _currentPageIndex = selectedPageIndex;
+    });
   }
 }
 
