@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "247736794745",
-    "firebase_url": "https://panino-32493.firebaseio.com",
-    "project_id": "panino-32493",
-    "storage_bucket": "panino-32493.appspot.com"
+    "project_number": "49588244048",
+    "firebase_url": "https://panino-69826.firebaseio.com",
+    "project_id": "panino-69826",
+    "storage_bucket": "panino-69826.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:247736794745:android:2335481547cd2b96be9ea8",
+        "mobilesdk_app_id": "1:49588244048:android:8dd89fb1748709e6588b55",
         "android_client_info": {
           "package_name": "kr.co.sandylabs.panino"
         }
       },
       "oauth_client": [
         {
-          "client_id": "247736794745-3cdhpkdi5hocglfvsohdcsrdd5uf92kh.apps.googleusercontent.com",
+          "client_id": "49588244048-75s1i75fjrp6inlcdpf5kpf8nurfn3ug.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "kr.co.sandylabs.panino",
@@ -23,24 +23,24 @@
           }
         },
         {
-          "client_id": "247736794745-m5a2ta2oohoiksmmc2uoc9ckcpg45an4.apps.googleusercontent.com",
+          "client_id": "49588244048-v938v3r63uhf0b6r4afect6lovra580c.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDy9COYJcsVEKKTc2M3Hdzp7cu1IJUnzGQ"
+          "current_key": "AIzaSyAuFPrWJg4esexnUzZ27dwGmX42Hv2WVSQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "247736794745-m5a2ta2oohoiksmmc2uoc9ckcpg45an4.apps.googleusercontent.com",
+              "client_id": "49588244048-v938v3r63uhf0b6r4afect6lovra580c.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "247736794745-kbbcgf9660h94su4e45rq9t2v3h6j37v.apps.googleusercontent.com",
+              "client_id": "49588244048-rt348li5q04b8qdn0pt3ujtkiululli0.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "kr.co.sandylabs.panino"
