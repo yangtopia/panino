@@ -1,4 +1,4 @@
-package com.example.panino
+package kr.co.sandylabs.panino
 
 import io.flutter.embedding.android.FlutterActivity
 
