@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>247736794745-kbbcgf9660h94su4e45rq9t2v3h6j37v.apps.googleusercontent.com</string>
+	<string>49588244048-rt348li5q04b8qdn0pt3ujtkiululli0.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.247736794745-kbbcgf9660h94su4e45rq9t2v3h6j37v</string>
+	<string>com.googleusercontent.apps.49588244048-rt348li5q04b8qdn0pt3ujtkiululli0</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA7F2XcRv_9pnU4Jis3f1YKtjF9f4dmkD4</string>
+	<string>AIzaSyCNAgqd8fCZgLe8q00H9a2u9PTpYQ1FJ8o</string>
 	<key>GCM_SENDER_ID</key>
-	<string>247736794745</string>
+	<string>49588244048</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>kr.co.sandylabs.panino</string>
 	<key>PROJECT_ID</key>
-	<string>panino-32493</string>
+	<string>panino-69826</string>
 	<key>STORAGE_BUCKET</key>
-	<string>panino-32493.appspot.com</string>
+	<string>panino-69826.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:247736794745:ios:856e3d43afb3b6c3be9ea8</string>
+	<string>1:49588244048:ios:cf77698c04cf8eee588b55</string>
 	<key>DATABASE_URL</key>
-	<string>https://panino-32493.firebaseio.com</string>
+	<string>https://panino-69826.firebaseio.com</string>
 </dict>
 </plist>
