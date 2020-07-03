@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
                   BottomNavigationBarItem(
                       icon: Icon(Icons.movie), title: Text('동영상')),
                   BottomNavigationBarItem(
-                      icon: Icon(Icons.cake), title: Text('레시피')),
+                      icon: Icon(Icons.favorite), title: Text('레시피')),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.airport_shuttle), title: Text('주문내역')),
                   BottomNavigationBarItem(
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
                 fixedColor: Colors.deepOrange,
                 currentIndex: snapshot.data.index,
                 unselectedItemColor: Colors.grey,
-                showSelectedLabels: false,
+                showSelectedLabels: true,
                 showUnselectedLabels: false,
                 onTap: _onTab,
               ),
