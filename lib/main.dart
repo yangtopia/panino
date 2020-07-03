@@ -1,65 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'state/bloc/index.dart';
 import 'state/provider/index.dart';
 
 void main() => runApp(MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (context) => Counter()),
-          ChangeNotifierProvider(create: (context) => Counter2())
+          ChangeNotifierProvider(create: (_) => PageIndexProvider()),
         ],
-        child: Consumer2<Counter, Counter2>(
-          builder: (context, value, value2, child) {
+        child: Consumer<PageIndexProvider>(
+          builder: (context, value, child) {
             return MyApp();
           },
         )));
 
-PageIndexBloc pageIndexBloc = PageIndexBloc();
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final pageIndexProvider = Provider.of<PageIndexProvider>(context);
+
     void _onTab(int selectedPageIndex) {
-      pageIndexBloc.changePageIndex(selectedPageIndex);
+      pageIndexProvider.changeIndex(selectedPageIndex);
     }
 
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // primarySwatch: Colors.white,
-        primaryColor: Colors.white,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: StreamBuilder<PageIndex>(
-          stream: pageIndexBloc.pageIndexStream$,
-          initialData: PageIndex.home,
-          builder: (context, snapshot) {
-            return Scaffold(
-              body: pages[snapshot.data],
-              bottomNavigationBar: BottomNavigationBar(
-                items: [
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.home), title: Text('홈')),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.movie), title: Text('동영상')),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.favorite), title: Text('레시피')),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.airport_shuttle), title: Text('주문내역')),
-                  BottomNavigationBarItem(
-                      icon: Icon(Icons.account_circle), title: Text('MY')),
-                ],
-                type: BottomNavigationBarType.fixed,
-                fixedColor: Colors.deepOrange,
-                currentIndex: snapshot.data.index,
-                unselectedItemColor: Colors.grey,
-                showSelectedLabels: true,
-                showUnselectedLabels: false,
-                onTap: _onTab,
-              ),
-            );
-          }),
-    );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: Colors.white,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: Scaffold(
+            body: pages[pageIndexProvider.currentIndex],
+            bottomNavigationBar: BottomNavigationBar(
+              items: bottomNavigationBarItems,
+              type: BottomNavigationBarType.fixed,
+              fixedColor: Colors.deepOrange,
+              currentIndex: pageIndexProvider.currentIndex.index,
+              unselectedItemColor: Colors.grey,
+              showSelectedLabels: true,
+              showUnselectedLabels: false,
+              onTap: _onTab,
+            )));
   }
 }
