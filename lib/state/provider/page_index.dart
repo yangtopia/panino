@@ -15,7 +15,7 @@ final Map<PageIndex, Widget> pages = {
 
 final bottomNavigationBarItems = [
   BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('홈')),
-  BottomNavigationBarItem(icon: Icon(Icons.movie), title: Text('동영상')),
+  BottomNavigationBarItem(icon: Icon(Icons.live_tv), title: Text('TV')),
   BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Text('레시피')),
   BottomNavigationBarItem(
       icon: Icon(Icons.airport_shuttle), title: Text('주문내역')),

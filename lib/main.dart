@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'state/provider/index.dart';
 
-void main() => runApp(MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => PageIndexProvider()),
-        ],
-        child: Consumer<PageIndexProvider>(
-          builder: (context, value, child) {
-            return MyApp();
-          },
-        )));
+void main() {
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => PageIndexProvider()),
+      ],
+      child: Consumer<PageIndexProvider>(
+        builder: (context, value, child) {
+          return MyApp();
+        },
+      )));
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     final pageIndexProvider = Provider.of<PageIndexProvider>(context);
 
     void _onTab(int selectedPageIndex) {
@@ -36,7 +40,7 @@ class MyApp extends StatelessWidget {
               fixedColor: Colors.deepOrange,
               currentIndex: pageIndexProvider.currentIndex.index,
               unselectedItemColor: Colors.grey,
-              showSelectedLabels: true,
+              showSelectedLabels: false,
               showUnselectedLabels: false,
               onTap: _onTab,
             )));
