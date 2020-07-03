@@ -82,12 +82,12 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(4.0))),
                 child: Column(
                   children: [
-                    FadeInImage.assetNetwork(
-                      placeholder: 'assets/images/taco.png',
-                      image:
-                          'https://i0.wp.com/www.eatthis.com/wp-content/uploads/2019/03/subway-cold-cut-combo-sub.jpg?w=640&ssl=1',
-                      fit: BoxFit.cover,
-                    ),
+                    // FadeInImage.assetNetwork(
+                    //   placeholder: 'assets/images/taco.png',
+                    //   image:
+                    //       'https://i0.wp.com/www.eatthis.com/wp-content/uploads/2019/03/subway-cold-cut-combo-sub.jpg?w=640&ssl=1',
+                    //   fit: BoxFit.fill,
+                    // ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
