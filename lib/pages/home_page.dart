@@ -15,6 +15,13 @@ class HomePage extends StatelessWidget {
             floating: true,
             centerTitle: false,
             backgroundColor: Colors.deepOrange,
+            expandedHeight: 200.0,
+            shape: ContinuousRectangleBorder(
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              )
+            ),
             actions: [
               IconButton(
                   icon: Icon(
@@ -56,7 +63,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             );
-          }, childCount: 20))
+          }, childCount: 3))
         ],
       ),
     );
