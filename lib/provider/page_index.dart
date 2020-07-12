@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import '../../pages/index.dart';
+import '../pages/pages.dart';
 
 enum PageIndex { home, recipe, order, mypage }
 
