@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../../pages/index.dart';
 
-enum PageIndex { home, video, recipe, order, mypage }
+enum PageIndex { home, recipe, order, mypage }
 
 final Map<PageIndex, Widget> pages = {
   PageIndex.home: HomePage(),
-  PageIndex.video: VideoPage(),
   PageIndex.recipe: RecipePage(),
   PageIndex.order: OrderPage(),
   PageIndex.mypage: MyPage(),
@@ -15,8 +14,7 @@ final Map<PageIndex, Widget> pages = {
 
 final bottomNavigationBarItems = [
   BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('홈')),
-  BottomNavigationBarItem(icon: Icon(Icons.live_tv), title: Text('TV')),
-  BottomNavigationBarItem(icon: Icon(Icons.favorite), title: Text('레시피')),
+  BottomNavigationBarItem(icon: Icon(Icons.fastfood), title: Text('레시피')),
   BottomNavigationBarItem(
       icon: Icon(Icons.airport_shuttle), title: Text('주문내역')),
   BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text('MY')),
