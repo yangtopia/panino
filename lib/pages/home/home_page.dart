@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
           SliverList(
               delegate: SliverChildBuilderDelegate((context, index) {
             return Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(left: 5.0),
               child: Container(
                 height: 400,
                 // width: 300,
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                       top: 30,
                       child: Container(
                         height: 350,
-                        width: 330,
+                        width: 320,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(34),
                           color: Colors.deepOrange.withOpacity(.06),
