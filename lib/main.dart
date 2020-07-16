@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'state/provider/index.dart';
+import 'provider/index.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -31,7 +32,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Colors.white,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          scaffoldBackgroundColor: Colors.white
+          scaffoldBackgroundColor: Colors.white,
+          textTheme: GoogleFonts.juaTextTheme(
+            Theme.of(context).textTheme
+          )
         ),
         home: Scaffold(
             body: pages[pageIndexProvider.currentIndex],

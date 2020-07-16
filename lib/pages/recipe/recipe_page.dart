@@ -12,6 +12,7 @@ class RecipePage extends StatelessWidget {
           IconButton(icon: Icon(Icons.notifications_none), onPressed: null)
         ],
       ),
+      body: Text('TEST'),
     );
   }
 }
