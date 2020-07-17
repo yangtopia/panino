@@ -72,13 +72,14 @@ class _HomePageState extends State<HomePage> {
                           flex: 4,
                           fit: FlexFit.tight,
                           child: Container(
+                              padding: EdgeInsets.symmetric(vertical: 8.0),
                               child: FractionallySizedBox(
-                            widthFactor: 0.6,
-                            child: Image(
-                              image:
-                                  AssetImage('assets/images/${index + 1}.png'),
-                            ),
-                          )),
+                                widthFactor: 0.6,
+                                child: Image(
+                                  image: AssetImage(
+                                      'assets/images/${index + 1}.png'),
+                                ),
+                              )),
                         ),
                         Flexible(
                           flex: 2,
