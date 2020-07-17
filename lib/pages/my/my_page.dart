@@ -5,12 +5,9 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MY'),
+        title: Text('설정'),
         elevation: 0,
         centerTitle: false,
-        actions: [
-          IconButton(icon: Icon(Icons.notifications_none), onPressed: null)
-        ],
       ),
     );
   }

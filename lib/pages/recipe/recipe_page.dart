@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
+import '../../models/menu.dart';
 
-class RecipePage extends StatelessWidget {
+class RecipePage extends StatefulWidget {
+  final SandylabsMenu selectedMenu;
+
+  RecipePage([this.selectedMenu]);
+
+  @override
+  _RecipePageState createState() => _RecipePageState();
+}
+
+class _RecipePageState extends State<RecipePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('레시피'),
-        elevation: 0,
-        centerTitle: false,
-        actions: [
-          IconButton(icon: Icon(Icons.notifications_none), onPressed: null)
-        ],
-      ),
-      body: Text('TEST')
-    );
+        appBar: AppBar(
+          title: Text('주문하기'),
+          elevation: 0,
+          centerTitle: false,
+        ),
+        body: FlatButton(
+          child: Text('${widget.selectedMenu?.name ?? 'test'}'),
+          onPressed: () {
+            print('TEST');
+          },
+        ));
   }
 }

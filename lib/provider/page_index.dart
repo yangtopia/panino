@@ -14,10 +14,9 @@ final Map<PageIndex, Widget> pages = {
 
 final bottomNavigationBarItems = [
   BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('홈')),
-  BottomNavigationBarItem(icon: Icon(Icons.fastfood), title: Text('레시피')),
-  BottomNavigationBarItem(
-      icon: Icon(Icons.airport_shuttle), title: Text('주문내역')),
-  BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text('MY')),
+  BottomNavigationBarItem(icon: Icon(Icons.fastfood), title: Text('주문하기')),
+  BottomNavigationBarItem(icon: Icon(Icons.receipt), title: Text('주문내역')),
+  BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text('설정')),
 ];
 
 class PageIndexProvider with ChangeNotifier {

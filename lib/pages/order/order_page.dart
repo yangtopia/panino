@@ -8,9 +8,6 @@ class OrderPage extends StatelessWidget {
         title: Text('주문내역'),
         elevation: 0,
         centerTitle: false,
-        actions: [
-          IconButton(icon: Icon(Icons.notifications_none), onPressed: null)
-        ],
       ),
     );
   }
