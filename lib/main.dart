@@ -28,26 +28,25 @@ class MyApp extends StatelessWidget {
     }
 
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
           primaryColor: Colors.white,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Colors.white,
-          textTheme: GoogleFonts.juaTextTheme(
-            Theme.of(context).textTheme
-          )
+          textTheme: GoogleFonts.juaTextTheme(Theme.of(context).textTheme)),
+      home: Scaffold(
+        body: pages[pageIndexProvider.currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          items: bottomNavigationBarItems,
+          type: BottomNavigationBarType.fixed,
+          fixedColor: Colors.deepOrange,
+          currentIndex: pageIndexProvider.currentIndex.index,
+          unselectedItemColor: Colors.grey,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          onTap: _onTab,
         ),
-        home: Scaffold(
-            body: pages[pageIndexProvider.currentIndex],
-            bottomNavigationBar: BottomNavigationBar(
-              items: bottomNavigationBarItems,
-              type: BottomNavigationBarType.fixed,
-              fixedColor: Colors.deepOrange,
-              currentIndex: pageIndexProvider.currentIndex.index,
-              unselectedItemColor: Colors.grey,
-              showSelectedLabels: false,
-              showUnselectedLabels: false,
-              onTap: _onTab,
-            )));
+      ),
+    );
   }
 }
