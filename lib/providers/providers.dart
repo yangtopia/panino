@@ -1,1 +1,1 @@
-export 'bottom_navigation/provider.dart';
+export 'screen_index/provider.dart';

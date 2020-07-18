@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:panino/shared/appbar_with_cart.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/models.dart';
@@ -40,15 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'SANDYLABS',
-          style:
-              TextStyle(color: Colors.deepOrange, fontWeight: FontWeight.bold),
-        ),
-        elevation: 0,
-        centerTitle: false,
-        actions: [IconButton(icon: Icon(Icons.shopping_cart), onPressed: null)],
+      appBar: AppBarWithCart(
+        'SANDYLABS',
+        TextStyle(color: Colors.deepOrange, fontWeight: FontWeight.bold),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 16.0),

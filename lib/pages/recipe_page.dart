@@ -16,10 +16,16 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('주문하기'),
+        title: Text('레시피'),
         elevation: 0,
         centerTitle: false,
-        actions: [IconButton(icon: Icon(Icons.shopping_cart), onPressed: null)],
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                print('레시피 추가');
+              })
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
