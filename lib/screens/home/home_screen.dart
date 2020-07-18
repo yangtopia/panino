@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:panino/shared/appbar_with_cart.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/models.dart';
 import '../../pages/recipe_page.dart';
 import '../../providers/providers.dart';
+import '../../shared/appbar_with_cart.dart';
 import 'widgets/flat_button.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                pageViewButton('${menus[index].name} 만들기',
+                                pageViewButton('만들기',
                                     _onTabRecipeCreateButton),
                                 pageViewButton(
                                     '바로 주문', _onTabOrderRecipeButton),
