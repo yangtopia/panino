@@ -3,14 +3,15 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'provider/index.dart';
+import 'models/models.dart';
+import 'providers/providers.dart';
 
 void main() {
   runApp(MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (_) => PageIndexProvider()),
+        ChangeNotifierProvider(create: (_) => ScreenIndexProvider()),
       ],
-      child: Consumer<PageIndexProvider>(
+      child: Consumer<ScreenIndexProvider>(
         builder: (context, value, child) {
           return MyApp();
         },
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    final pageIndexProvider = Provider.of<PageIndexProvider>(context);
+    final pageIndexProvider = Provider.of<ScreenIndexProvider>(context);
 
     void _onTab(int selectedPageIndex) {
       pageIndexProvider.changeIndex(selectedPageIndex);
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           textTheme: GoogleFonts.juaTextTheme(Theme.of(context).textTheme)),
       home: Scaffold(
-        body: pages[pageIndexProvider.currentIndex],
+        body: screens[pageIndexProvider.currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: bottomNavigationBarItems,
           type: BottomNavigationBarType.fixed,

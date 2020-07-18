@@ -1,20 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import '../../models/menu.dart';
-import '../pages.dart';
+import '../../models/models.dart';
+import '../../pages/recipe_page.dart';
+import '../../providers/providers.dart';
+import 'widgets/flat_button.dart';
 
-
-class HomePage extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   var _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    final _pageIndexProvider = Provider.of<ScreenIndexProvider>(context);
+    final _pageViewController =
+        PageController(viewportFraction: 0.9, initialPage: 0);
+
     var currentMenu = menus[_currentIndex];
+
+    void _onTabRecipeCreateButton() {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => RecipeCreatePage(currentMenu)));
+    }
+
+    void _onTabOrderRecipeButton() {
+      _pageIndexProvider.changeIndex(1);
+    }
+
+    void _onPageChanged(int value) {
+      setState(() {
+        _currentIndex = value;
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -24,9 +48,7 @@ class _HomePageState extends State<HomePage> {
         ),
         elevation: 0,
         centerTitle: false,
-        actions: [
-          IconButton(icon: Icon(Icons.notifications_none), onPressed: null)
-        ],
+        actions: [IconButton(icon: Icon(Icons.shopping_cart), onPressed: null)],
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 16.0),
@@ -42,13 +64,9 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.6,
               child: PageView.builder(
-                onPageChanged: (value) {
-                  setState(() {
-                    _currentIndex = value;
-                  });
-                },
-                controller:
-                    PageController(viewportFraction: 0.9, initialPage: 0),
+                onPageChanged: _onPageChanged,
+                controller: _pageViewController,
+                itemCount: 3,
                 itemBuilder: (_, index) => Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Container(
@@ -94,19 +112,10 @@ class _HomePageState extends State<HomePage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                FlatButton(
-                                  onPressed: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                RecipePage(currentMenu)));
-                                  },
-                                  child: Text(
-                                    '주문하기',
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                ),
+                                pageViewButton('${menus[index].name} 만들기',
+                                    _onTabRecipeCreateButton),
+                                pageViewButton(
+                                    '바로 주문', _onTabOrderRecipeButton),
                               ],
                             ),
                           ),
@@ -115,7 +124,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                itemCount: 3,
               ),
             )
           ],

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
-class MyPage extends StatelessWidget {
+class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('설정'),
+        title: Text('주문내역'),
         elevation: 0,
         centerTitle: false,
+        actions: [
+          IconButton(icon: Icon(Icons.shopping_cart), onPressed: null)
+        ],
       ),
     );
   }

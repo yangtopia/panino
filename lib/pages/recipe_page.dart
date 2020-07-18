@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import '../../models/menu.dart';
 
-class RecipePage extends StatefulWidget {
-  final SandylabsMenu selectedMenu;
+import '../models/models.dart';
 
-  RecipePage([this.selectedMenu]);
+class RecipeCreatePage extends StatefulWidget {
+  final MenuCategory selectedMenu;
+
+  RecipeCreatePage([this.selectedMenu]);
 
   @override
-  _RecipePageState createState() => _RecipePageState();
+  _RecipeCreatePageState createState() => _RecipeCreatePageState();
 }
 
-class _RecipePageState extends State<RecipePage> {
+class _RecipeCreatePageState extends State<RecipeCreatePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +19,7 @@ class _RecipePageState extends State<RecipePage> {
         title: Text('주문하기'),
         elevation: 0,
         centerTitle: false,
+        actions: [IconButton(icon: Icon(Icons.shopping_cart), onPressed: null)],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
