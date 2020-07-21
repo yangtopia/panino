@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/models.dart';
-import '../../pages/recipe_page.dart';
+import '../../pages/recipe/recipe_page.dart';
 import '../../providers/providers.dart';
 import '../../shared/appbar_with_cart.dart';
 import 'widgets/flat_button.dart';
