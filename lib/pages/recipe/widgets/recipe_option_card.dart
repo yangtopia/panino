@@ -32,19 +32,20 @@ class _RecipeOptionCardState extends State<RecipeOptionCard> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        InkWell(
-          onTap: _onTab,
-          child: Card(
+        Card(
+          color: _isSelected ? Colors.amber[100] : Colors.white,
+          child: InkWell(
+            onTap: _onTab,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AspectRatio(
-                  aspectRatio: 5 / 3.5,
-                  child: Image.asset(
-                    'assets/images/${widget.isSelected ? '1' : '2'}.png',
-                    fit: BoxFit.fitWidth,
-                  ),
-                ),
+                // AspectRatio(
+                //   aspectRatio: 5 / 3.5,
+                //   child: Image.asset(
+                //     'assets/images/${widget.isSelected ? '1' : '2'}.png',
+                //     fit: BoxFit.fitWidth,
+                //   ),
+                // ),
                 Center(
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
@@ -60,19 +61,19 @@ class _RecipeOptionCardState extends State<RecipeOptionCard> {
             ),
           ),
         ),
-        Positioned(
-          child: Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.white,
-            ),
-            child: _isSelected
-                ? Icon(Icons.check_circle_outline)
-                : Icon(Icons.panorama_fish_eye),
-          ),
-          right: 5,
-          top: 5,
-        ),
+        // Positioned(
+        //   child: Container(
+        //     decoration: BoxDecoration(
+        //       shape: BoxShape.circle,
+        //       color: Colors.white,
+        //     ),
+        //     child: _isSelected
+        //         ? Icon(Icons.check_circle_outline)
+        //         : Icon(Icons.panorama_fish_eye),
+        //   ),
+        //   right: 5,
+        //   top: 5,
+        // ),
       ],
     );
   }

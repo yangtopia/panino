@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:quiver/iterables.dart';
 
 import '../../models/models.dart';
@@ -42,9 +43,23 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('레시피 만들기'),
+        title: Text(
+          '레시피 만들기',
+        ),
         elevation: 0,
         centerTitle: false,
+        actions: [
+          FlatButton.icon(
+            onPressed: () {
+              print('저장');
+            },
+            icon: Icon(Icons.save_alt),
+            label: Text(
+              '저장',
+              style: TextStyle(fontSize: 18.0),
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -145,6 +160,25 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
                 ],
               ),
             ),
+            // Container(
+            //   padding: EdgeInsets.all(16.0).add(EdgeInsets.only(bottom: 16.0)),
+            //   child: ButtonTheme(
+            //     minWidth: double.infinity,
+            //     buttonColor: Colors.amber,
+            //     child: RaisedButton(
+            //       onPressed: () {
+            //         print('레시피 추가');
+            //       },
+            //       child: Padding(
+            //         padding: const EdgeInsets.all(16.0),
+            //         child: Text(
+            //           '레시피 추가',
+            //           style: TextStyle(fontSize: 30.0),
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),

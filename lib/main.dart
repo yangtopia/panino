@@ -34,6 +34,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.white,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           scaffoldBackgroundColor: Colors.white,
+          primaryTextTheme:
+              GoogleFonts.juaTextTheme(Theme.of(context).textTheme),
           textTheme: GoogleFonts.juaTextTheme(Theme.of(context).textTheme)),
       home: Scaffold(
         body: screens[pageIndexProvider.currentIndex],
