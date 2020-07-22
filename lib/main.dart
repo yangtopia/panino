@@ -31,12 +31,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: Colors.white,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          scaffoldBackgroundColor: Colors.white,
-          primaryTextTheme:
-              GoogleFonts.juaTextTheme(Theme.of(context).textTheme),
-          textTheme: GoogleFonts.juaTextTheme(Theme.of(context).textTheme)),
+        fontFamily: 'Jua',
+        primaryColor: Colors.white,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.white,
+        snackBarTheme: SnackBarThemeData(
+          contentTextStyle: TextStyle(fontFamily: 'Jua'),
+          // backgroundColor: Colors.deepOrange,
+        ),
+      ),
       home: Scaffold(
         body: screens[pageIndexProvider.currentIndex],
         bottomNavigationBar: BottomNavigationBar(

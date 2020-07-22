@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:quiver/iterables.dart';
 
 import '../../models/models.dart';
@@ -16,6 +15,8 @@ class RecipeCreatePage extends StatefulWidget {
 }
 
 class _RecipeCreatePageState extends State<RecipeCreatePage> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
   final _vegetableOptions = partition(vegetableOptions, 3).toList();
   final _sauceOptions = partition(sauceOptions, 3).toList();
 
@@ -42,6 +43,7 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         title: Text(
           '레시피 만들기',
@@ -51,7 +53,31 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
         actions: [
           FlatButton.icon(
             onPressed: () {
-              print('저장');
+              scaffoldKey.currentState.showSnackBar(
+                SnackBar(
+                  content: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        '레시피가 저장되었습니다 🥪',
+                        style: TextStyle(
+                          fontSize: 17.0
+                        ),
+                      ),
+                      FlatButton.icon(
+                          onPressed: () {
+                            print('바로 주문');
+                          },
+                          icon: Icon(Icons.airport_shuttle),
+                          label: Text(
+                            '바로 주문',
+                            style: TextStyle(fontFamily: 'Jua'),
+                          ))
+                    ],
+                  ),
+                ),
+              );
             },
             icon: Icon(Icons.save_alt),
             label: Text(
@@ -68,7 +94,7 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     '빵 🥖',
