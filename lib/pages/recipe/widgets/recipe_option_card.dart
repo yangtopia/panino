@@ -32,10 +32,10 @@ class _RecipeOptionCardState extends State<RecipeOptionCard> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Card(
-          color: _isSelected ? Colors.amber[100] : Colors.white,
-          child: InkWell(
-            onTap: _onTab,
+        GestureDetector(
+          onTap: _onTab,
+          child: Card(
+            color: _isSelected ? Colors.amber[100] : Colors.white,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -29,7 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void _onTabOrderRecipeButton() {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => CartPage()));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => CartPage(), fullscreenDialog: true));
     }
 
     void _onPageChanged(int value) {
