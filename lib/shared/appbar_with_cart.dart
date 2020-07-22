@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/cart_page.dart';
@@ -24,7 +25,14 @@ class AppBarWithCart extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: false,
       actions: [
         IconButton(
-          icon: Icon(Icons.shopping_cart),
+          icon: Badge(
+            toAnimate: false,
+            badgeContent: Text(
+              '3',
+              style: TextStyle(color: Colors.white),
+            ),
+            child: Icon(Icons.shopping_cart),
+          ),
           onPressed: _onPressed,
         )
       ],

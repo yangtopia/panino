@@ -45,7 +45,10 @@ class MyScreen extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.shopping_basket),
                 title: Text('비회원 주문 조회'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  size: 18,
+                ),
               ),
               Divider(
                 color: Colors.grey[100],
@@ -56,32 +59,50 @@ class MyScreen extends StatelessWidget {
                   ListTile(
                     leading: Icon(Icons.airport_shuttle),
                     title: Text('배송 안내'),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 18,
+                    ),
                   ),
                   ListTile(
                     leading: Icon(Icons.info_outline),
                     title: Text('공지사항'),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 18,
+                    ),
                   ),
                   ListTile(
                     leading: Icon(Icons.question_answer),
                     title: Text('자주하는 질문'),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 18,
+                    ),
                   ),
                   ListTile(
                     leading: Icon(Icons.contact_phone),
                     title: Text('고객센터'),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 18,
+                    ),
                   ),
                   ListTile(
                     leading: Icon(Icons.restaurant_menu),
                     title: Text('이용안내'),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 18,
+                    ),
                   ),
                   ListTile(
                     leading: Icon(Icons.favorite),
                     title: Text('샌디랩스 소개'),
-                    trailing: Icon(Icons.arrow_forward_ios),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 18,
+                    ),
                   ),
                 ]).toList(),
               ),
@@ -92,7 +113,14 @@ class MyScreen extends StatelessWidget {
               ListTile(
                 leading: Icon(Icons.notifications),
                 title: Text('알림 설정'),
-                trailing: Icon(Icons.arrow_forward_ios),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  size: 18,
+                ),
+              ),
+              Divider(
+                color: Colors.grey[100],
+                thickness: 5,
               ),
             ],
           ),

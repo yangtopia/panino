@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../models/models.dart';
 import '../../pages/cart_page.dart';
-import '../../pages/recipe/recipe_page.dart';
+import '../../pages/recipe/recipe_create_page.dart';
 import '../../shared/appbar_with_cart.dart';
 import 'widgets/flat_button.dart';
 
@@ -23,9 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
     void _onTabRecipeCreateButton() {
       Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => RecipeCreatePage(currentMenu)));
+        context,
+        MaterialPageRoute(
+          builder: (context) => RecipeCreatePage(),
+        ),
+      );
     }
 
     void _onTabOrderRecipeButton() {

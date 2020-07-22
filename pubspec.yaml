@@ -36,6 +36,7 @@ dependencies:
   rxdart: ^0.24.1
   provider: ^4.1.3
   google_fonts: ^1.1.0
+  badges: ^1.1.1
 
 dev_dependencies:
   effective_dart: ^1.2.0
