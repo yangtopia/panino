@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../../models/models.dart';
+import '../../pages/cart_page.dart';
 import '../../pages/recipe/recipe_page.dart';
-import '../../providers/providers.dart';
 import '../../shared/appbar_with_cart.dart';
 import 'widgets/flat_button.dart';
 
@@ -17,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final _pageIndexProvider = Provider.of<ScreenIndexProvider>(context);
     final _pageViewController =
         PageController(viewportFraction: 0.9, initialPage: 0);
 
@@ -31,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     void _onTabOrderRecipeButton() {
-      _pageIndexProvider.changeIndex(1);
+      Navigator.push(context, MaterialPageRoute(builder: (_) => CartPage()));
     }
 
     void _onPageChanged(int value) {
@@ -107,8 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                pageViewButton('만들기',
-                                    _onTabRecipeCreateButton),
+                                pageViewButton('만들기', _onTabRecipeCreateButton),
                                 pageViewButton(
                                     '바로 주문', _onTabOrderRecipeButton),
                               ],

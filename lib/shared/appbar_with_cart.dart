@@ -12,7 +12,10 @@ class AppBarWithCart extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     void _onPressed() {
-      Navigator.push(context, MaterialPageRoute(builder: (_) => CartPage()));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (_) => CartPage(), fullscreenDialog: true));
     }
 
     return AppBar(

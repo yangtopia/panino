@@ -3,6 +3,7 @@ import 'package:quiver/iterables.dart';
 
 import '../../models/models.dart';
 import '../../models/recipe_option.dart';
+import '../cart_page.dart';
 import 'widgets/recipe_option_card.dart';
 
 class RecipeCreatePage extends StatefulWidget {
@@ -26,7 +27,6 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
   }
 
   var _currentBread = '허니오트';
-  var _currentCheeze = '아메리칸 치즈';
 
   void _onChangedBreadDropdown(String bread) {
     setState(() {
@@ -34,14 +34,14 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
     });
   }
 
-  void _onChangedCheezeDropdown(String cheeze) {
-    setState(() {
-      _currentCheeze = cheeze;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    void _onPressedSnackbarButton() {
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => CartPage(), fullscreenDialog: true),
+      );
+    }
+
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
@@ -61,14 +61,10 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
                     children: [
                       Text(
                         '레시피가 저장되었습니다 🥪',
-                        style: TextStyle(
-                          fontSize: 17.0
-                        ),
+                        style: TextStyle(fontSize: 17.0),
                       ),
                       FlatButton.icon(
-                          onPressed: () {
-                            print('바로 주문');
-                          },
+                          onPressed: _onPressedSnackbarButton,
                           icon: Icon(Icons.airport_shuttle),
                           label: Text(
                             '바로 주문',
@@ -76,6 +72,10 @@ class _RecipeCreatePageState extends State<RecipeCreatePage> {
                           ))
                     ],
                   ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15.0),
+                          topRight: Radius.circular(15.0))),
                 ),
               );
             },

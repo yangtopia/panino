@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     final pageIndexProvider = Provider.of<ScreenIndexProvider>(context);
 
-    void _onTab(int selectedPageIndex) {
-      pageIndexProvider.changeIndex(selectedPageIndex);
+    void _onTab(int selectedScreenIndex) {
+      pageIndexProvider.changeIndex(ScreenIndex.values[selectedScreenIndex]);
     }
 
     return MaterialApp(

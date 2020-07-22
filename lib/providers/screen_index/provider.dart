@@ -6,8 +6,8 @@ class ScreenIndexProvider with ChangeNotifier {
   ScreenIndex _currentIndex = ScreenIndex.home;
   ScreenIndex get currentIndex => _currentIndex;
 
-  void changeIndex(int index) {
-    _currentIndex = ScreenIndex.values[index];
+  void changeIndex(ScreenIndex screenIndex) {
+    _currentIndex = ScreenIndex.values[screenIndex.index];
     notifyListeners();
   }
 }
